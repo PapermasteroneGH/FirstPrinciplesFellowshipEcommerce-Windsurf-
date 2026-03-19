@@ -170,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* Research Showcase */}
-      <section className="py-20 bg-white">
+      <section id="success-stories" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -185,51 +185,51 @@ export default function Home() {
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="mb-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
-                  <span className="text-blue-600 font-bold text-sm">AI</span>
+                  <span className="text-blue-600 font-bold text-sm">FS</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Neural Network Optimization</h3>
-                <Badge variant="secondary" className="mb-3">Machine Learning</Badge>
+                <h3 className="font-semibold text-lg mb-2">Future Studies—Based Scenario Analysis of a Tree-based Economy in a Post-Scarcity, Space-Colonizing Civilization</h3>
+                <Badge variant="secondary" className="mb-3">Futurology</Badge>
               </div>
               <p className="text-gray-600 mb-4">
-                Development of novel optimization algorithms for deep neural networks, resulting in 40% reduction in training time while maintaining accuracy. Published in Nature Machine Intelligence.
+                Humanity’s transition toward space colonization, driven by environmental strain and resource depletion, is poised to disrupt traditional economic systems as material scarcity—especially of metals—disappears. This study addresses a critical academic gap by redefining value in a post-scarcity civilization.
               </p>
               <div className="text-sm text-gray-500">
-                <div className="font-semibold">Dr. Sarah Chen</div>
-                <div>Stanford AI Lab • 2024</div>
+                <div className="font-semibold">Iftitah Ranjana Ahtikiszi</div>
+                <div>First Principles Fellowship Founder • 2024</div>
               </div>
             </Card>
             
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="mb-4">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-3">
-                  <span className="text-green-600 font-bold text-sm">QM</span>
+                  <span className="text-green-600 font-bold text-sm">CE</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Quantum Computing Applications</h3>
-                <Badge variant="secondary" className="mb-3">Quantum Physics</Badge>
+                <h3 className="font-semibold text-lg mb-2">Mobile Suit Gundam RX-75 GunTank Mass Production Type Inspired Autonomous Swarm Robotics For Economically Feasible Defense Mechanism</h3>
+                <Badge variant="secondary" className="mb-3">Computer Engineering</Badge>
               </div>
               <p className="text-gray-600 mb-4">
-                Pioneering work in quantum algorithm development for drug discovery simulations. Achieved 100x speedup in molecular modeling calculations compared to classical methods.
+                Following the launch of NATO’s LEAP initiative to develop cost-effective autonomous air defense systems, this study explores how unconventional inspiration can drive innovation under constraint. Drawing from the Mobile Suit Gundam franchise, it presents a proof-of-concept mechatronic system based on the RX-75 Guntank Mass Production Type.
               </p>
               <div className="text-sm text-gray-500">
-                <div className="font-semibold">Prof. Michael Rodriguez</div>
-                <div>MIT Quantum Computing Center • 2024</div>
+                <div className="font-semibold">Mikail Khalif Hajrin</div>
+                <div>Institut Teknologi Sepuluh Nopember Marine Solar Boat Team • 2024</div>
               </div>
             </Card>
             
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="mb-4">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
-                  <span className="text-purple-600 font-bold text-sm">BIO</span>
+                  <span className="text-purple-600 font-bold text-sm">SE</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">CRISPR Gene Editing</h3>
-                <Badge variant="secondary" className="mb-3">Biotechnology</Badge>
+                <h3 className="font-semibold text-lg mb-2">Academicians: Finding Gold In Muddy Swamps</h3>
+                <Badge variant="secondary" className="mb-3">Software Engineering</Badge>
               </div>
               <p className="text-gray-600 mb-4">
-                Breakthrough in precision gene editing techniques for treating genetic disorders. Successfully demonstrated 95% accuracy in targeted DNA modifications in human cell cultures.
+                Recognized as a finalist in Stanford INTERSECT Young Researcher Competition, this project introduces an adaptive online education platform designed to unlock high-potential talent in underserved communities. Built on Zone of Proximal Development, the platform dynamically adjusts each student’s learning curve through a tailored algorithm that balances challenge and mastery. Targeting academically driven students in poverty across Indonesia, it incorporates a performance-based tuition reduction system—captured in the guiding vision “Finding gold in muddy swamps.”
               </p>
               <div className="text-sm text-gray-500">
-                <div className="font-semibold">Dr. Emily Watson</div>
-                <div>Harvard Medical School • 2023</div>
+                <div className="font-semibold">Alif Kenzie Wibiyoso</div>
+                <div>Institut Teknologi Bandung • 2023</div>
               </div>
             </Card>
           </div>
@@ -280,30 +280,30 @@ export default function Home() {
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>Technical Consulting</li>
-                <li>Training Programs</li>
-                <li>Mentorship</li>
-                <li>Sponsorships</li>
+                <li><Link href="/#services" className="hover:text-white transition-colors">Technical Consulting</Link></li>
+                <li><Link href="/#services" className="hover:text-white transition-colors">Training Programs</Link></li>
+                <li><Link href="/#services" className="hover:text-white transition-colors">Mentorship</Link></li>
+                <li><Link href="/#services" className="hover:text-white transition-colors">Sponsorships</Link></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>About Us</li>
-                <li>Our Team</li>
-                <li>Success Stories</li>
-                <li>Contact</li>
+                <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">Our Team</Link></li>
+                <li><Link href="/#success-stories" className="hover:text-white transition-colors">Success Stories</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>info@firstprinciples.org</li>
-                <li>+1 (555) 123-4567</li>
-                <li>123 Research Ave</li>
-                <li>Science City, SC 12345</li>
+                <li><a href="mailto:info@firstprinciples.org" className="hover:text-white transition-colors">info@firstprinciples.org</a></li>
+                <li><a href="tel:+15551234567" className="hover:text-white transition-colors">+1 (555) 123-4567</a></li>
+                <li><a href="https://maps.google.com/?q=123+Research+Ave+Science+City+SC+12345" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">123 Research Ave</a></li>
+                <li><a href="https://maps.google.com/?q=123+Research+Ave+Science+City+SC+12345" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Science City, SC 12345</a></li>
               </ul>
             </div>
           </div>
