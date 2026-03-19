@@ -231,11 +231,11 @@ export default function Home() {
             Ready to Advance Your Research?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join our community of researchers and get the support you need to make groundbreaking discoveries.
+            Connect with our team to learn how we can support your research journey through technical consulting, training, mentorship, and sponsorships.
           </p>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-6" asChild>
-            <Link href="/services">
-              Get Started Today
+            <Link href="/contact">
+              Get in Touch Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
@@ -243,7 +243,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
