@@ -16,11 +16,11 @@ export default function Home() {
           </div>
           <nav className="hidden md:flex space-x-6">
             <Link href="#services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</Link>
-            <Link href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">About</Link>
-            <Link href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</Link>
+            <Link href="/about" className="text-gray-600 hover:text-blue-600 transition-colors">About</Link>
+            <Link href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</Link>
           </nav>
           <Button asChild>
-            <Link href="/services">Get Started</Link>
+            <Link href="/contact">Get in Touch</Link>
           </Button>
         </div>
       </header>
@@ -41,13 +41,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 py-6" asChild>
-              <Link href="/services">
-                Explore Our Services
+              <Link href="#services">
+                Learn About Our Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
-              <Link href="#about">Learn More</Link>
+              <Link href="/about">Learn More</Link>
             </Button>
           </div>
         </div>
@@ -105,6 +105,15 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
+          </div>
+          
+          <div className="text-center mt-8">
+            <Button size="lg" asChild>
+              <Link href="/contact">
+                Inquire About Our Services
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

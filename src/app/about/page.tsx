@@ -68,12 +68,12 @@ export default function AboutPage() {
           </div>
           <nav className="hidden md:flex space-x-6">
             <Link href="/" className="text-gray-600 hover:text-blue-600 transition-colors">Home</Link>
-            <Link href="/services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</Link>
+            <Link href="/#services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</Link>
             <Link href="/about" className="text-blue-600 font-medium">About</Link>
-            <Link href="/#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</Link>
+            <Link href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</Link>
           </nav>
           <Button asChild>
-            <Link href="/services">Get Started</Link>
+            <Link href="/contact">Get in Touch</Link>
           </Button>
         </div>
       </header>
@@ -239,13 +239,13 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-lg px-8 py-6" asChild>
-              <Link href="/services">
+              <Link href="/contact">
                 Get Started as a Researcher
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 text-white border-white hover:bg-white hover:text-blue-600" asChild>
-              <Link href="/#contact">Become a Mentor</Link>
+              <Link href="/contact">Become a Mentor</Link>
             </Button>
           </div>
         </div>

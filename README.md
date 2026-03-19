@@ -1,33 +1,32 @@
-# First Principles Fellowship E-commerce Website
+# First Principles Fellowship Website
 
-A modern, responsive e-commerce website built with Next.js 16, React, TypeScript, and TailwindCSS for First Principles Fellowship - a research & development organization providing technical consulting, training, mentorship, and sponsorships to scientific researchers.
+A modern, responsive informational website built with Next.js 16, React, TypeScript, and TailwindCSS for First Principles Fellowship - a research & development organization providing technical consulting, training, mentorship, and sponsorships to scientific researchers.
 
 ## 🚀 Features
 
 - **Modern Tech Stack**: Next.js 16, React 18, TypeScript, TailwindCSS
-- **E-commerce Functionality**: Full shopping cart and checkout system
 - **Responsive Design**: Mobile-first design with shadcn/ui components
-- **Service Management**: 8 different service offerings across 4 categories
+- **Service Information**: Comprehensive details about 4 service categories
 - **Contact System**: Interactive contact forms and information pages
 - **Professional UI**: Clean, modern design optimized for researchers
 
 ## 📦 Services Offered
 
 ### Technical Consulting
-- Basic Technical Consulting ($299/month)
-- Premium Technical Consulting ($899/3 months)
+- Basic Technical Consulting
+- Premium Technical Consulting
 
 ### Training Programs
-- Research Methods Workshop ($199/2 days)
-- Advanced Research Techniques ($599/1 week)
+- Research Methods Workshop
+- Advanced Research Techniques
 
 ### Mentorship
-- Monthly Mentorship Program ($399/month)
-- Annual Mentorship Fellowship ($3,999/year)
+- Monthly Mentorship Program
+- Annual Mentorship Fellowship
 
 ### Sponsorships
-- Starter Research Grant ($999/6 months)
-- Advanced Research Fellowship ($4,999/year)
+- Starter Research Grant
+- Advanced Research Fellowship
 
 ## 🛠️ Tech Stack
 
@@ -45,9 +44,7 @@ A modern, responsive e-commerce website built with Next.js 16, React, TypeScript
 src/
 ├── app/
 │   ├── about/           # About page
-│   ├── checkout/        # Checkout process
 │   ├── contact/         # Contact page
-│   ├── services/        # Services listing
 │   ├── layout.tsx       # Root layout
 │   └── page.tsx         # Homepage
 ├── components/
@@ -145,18 +142,11 @@ CONTACT_API_ENDPOINT=https://...
 - Impact statistics
 - Call-to-action sections
 
-### Services Page
-- Category filtering system
-- Detailed service cards with pricing
-- Shopping cart functionality
-- Persistent cart using localStorage
-- Responsive grid layout
-
-### Checkout System
-- Comprehensive form validation
-- Order summary and confirmation
-- Researcher information collection
-- Multi-step checkout process
+### Services Overview
+- Category-based service information
+- Detailed service descriptions
+- Contact forms for service inquiries
+- Responsive layout
 
 ### Additional Pages
 - **About**: Organization mission, team, values

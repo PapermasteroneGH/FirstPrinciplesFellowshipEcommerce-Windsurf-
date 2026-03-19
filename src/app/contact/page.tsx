@@ -93,12 +93,12 @@ export default function ContactPage() {
           </div>
           <nav className="hidden md:flex space-x-6">
             <Link href="/" className="text-gray-600 hover:text-blue-600 transition-colors">Home</Link>
-            <Link href="/services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</Link>
+            <Link href="/#services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</Link>
             <Link href="/about" className="text-gray-600 hover:text-blue-600 transition-colors">About</Link>
             <Link href="/contact" className="text-blue-600 font-medium">Contact</Link>
           </nav>
           <Button asChild>
-            <Link href="/services">Get Started</Link>
+            <Link href="/#services">Learn About Services</Link>
           </Button>
         </div>
       </header>
