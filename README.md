@@ -1,36 +1,193 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# First Principles Fellowship E-commerce Website
 
-## Getting Started
+A modern, responsive e-commerce website built with Next.js 16, React, TypeScript, and TailwindCSS for First Principles Fellowship - a research & development organization providing technical consulting, training, mentorship, and sponsorships to scientific researchers.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Modern Tech Stack**: Next.js 16, React 18, TypeScript, TailwindCSS
+- **E-commerce Functionality**: Full shopping cart and checkout system
+- **Responsive Design**: Mobile-first design with shadcn/ui components
+- **Service Management**: 8 different service offerings across 4 categories
+- **Contact System**: Interactive contact forms and information pages
+- **Professional UI**: Clean, modern design optimized for researchers
+
+## 📦 Services Offered
+
+### Technical Consulting
+- Basic Technical Consulting ($299/month)
+- Premium Technical Consulting ($899/3 months)
+
+### Training Programs
+- Research Methods Workshop ($199/2 days)
+- Advanced Research Techniques ($599/1 week)
+
+### Mentorship
+- Monthly Mentorship Program ($399/month)
+- Annual Mentorship Fellowship ($3,999/year)
+
+### Sponsorships
+- Starter Research Grant ($999/6 months)
+- Advanced Research Fellowship ($4,999/year)
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 with App Router
+- **Language**: TypeScript
+- **Styling**: TailwindCSS
+- **Components**: shadcn/ui
+- **Icons**: Lucide React
+- **State Management**: React Hooks
+- **Deployment**: Vercel (recommended)
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── about/           # About page
+│   ├── checkout/        # Checkout process
+│   ├── contact/         # Contact page
+│   ├── services/        # Services listing
+│   ├── layout.tsx       # Root layout
+│   └── page.tsx         # Homepage
+├── components/
+│   └── ui/              # shadcn/ui components
+├── lib/
+│   └── utils.ts         # Utility functions
+└── globals.css          # Global styles
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/first-principles-fellowship.git
+cd first-principles-fellowship
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+## 🌐 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Deploy to Vercel (Recommended)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Create GitHub Repository**:
+   - Go to [github.com](https://github.com) and create a new repository
+   - Name it `first-principles-fellowship`
+   - Don't initialize with README (we already have one)
+
+2. **Push to GitHub**:
+   ```bash
+   git remote add origin https://github.com/yourusername/first-principles-fellowship.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+3. **Deploy to Vercel**:
+   - Go to [vercel.com](https://vercel.com) and sign up/login
+   - Click "New Project"
+   - Import your GitHub repository
+   - Vercel will automatically detect Next.js settings
+   - Click "Deploy"
+
+4. **Custom Domain** (optional):
+   - In Vercel dashboard, go to Project Settings
+   - Add your custom domain
+   - Update DNS records as instructed
+
+### Manual Deployment
+
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env.local` file for environment-specific variables:
+
+```env
+# For future payment integration
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+STRIPE_SECRET_KEY=sk_test_...
+
+# Contact form (if using external service)
+CONTACT_API_ENDPOINT=https://...
+```
+
+## 📱 Features Breakdown
+
+### Homepage
+- Hero section with organization branding
+- Services overview with interactive cards
+- Testimonials from researchers
+- Impact statistics
+- Call-to-action sections
+
+### Services Page
+- Category filtering system
+- Detailed service cards with pricing
+- Shopping cart functionality
+- Persistent cart using localStorage
+- Responsive grid layout
+
+### Checkout System
+- Comprehensive form validation
+- Order summary and confirmation
+- Researcher information collection
+- Multi-step checkout process
+
+### Additional Pages
+- **About**: Organization mission, team, values
+- **Contact**: Contact form, FAQ, multiple contact methods
+
+## 🎨 Design System
+
+- **Primary Color**: Blue (#2563eb)
+- **Font**: Geist Sans (system font stack)
+- **Components**: shadcn/ui for consistency
+- **Icons**: Lucide React
+- **Responsive**: Mobile-first approach
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 📞 Support
+
+For support, please contact:
+- Email: info@firstprinciples.org
+- Phone: +1 (555) 123-4567
+
+---
+
+Built with ❤️ for the scientific research community
