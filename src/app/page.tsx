@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Users, Lightbulb, Award, ArrowRight, Star } from "lucide-react";
+import { BookOpen, Users, Lightbulb, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -169,57 +169,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Research Showcase */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Researchers Say
+              Research Success Stories
             </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Highlighting breakthrough research projects supported by First Principles Fellowship
+            </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <Card className="p-6">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                  <span className="text-blue-600 font-bold text-sm">AI</span>
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Neural Network Optimization</h3>
+                <Badge variant="secondary" className="mb-3">Machine Learning</Badge>
               </div>
               <p className="text-gray-600 mb-4">
-                "The mentorship I received transformed my research approach. 
-                First Principles Fellowship helped me secure funding and publish my work."
+                Development of novel optimization algorithms for deep neural networks, resulting in 40% reduction in training time while maintaining accuracy. Published in Nature Machine Intelligence.
               </p>
-              <div className="font-semibold">Dr. Sarah Chen</div>
-              <div className="text-sm text-gray-500">Neuroscience Researcher</div>
+              <div className="text-sm text-gray-500">
+                <div className="font-semibold">Dr. Sarah Chen</div>
+                <div>Stanford AI Lab • 2024</div>
+              </div>
             </Card>
             
-            <Card className="p-6">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="mb-4">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+                  <span className="text-green-600 font-bold text-sm">QM</span>
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Quantum Computing Applications</h3>
+                <Badge variant="secondary" className="mb-3">Quantum Physics</Badge>
               </div>
               <p className="text-gray-600 mb-4">
-                "The technical consulting services were invaluable. 
-                Their expertise helped me overcome complex experimental design challenges."
+                Pioneering work in quantum algorithm development for drug discovery simulations. Achieved 100x speedup in molecular modeling calculations compared to classical methods.
               </p>
-              <div className="font-semibold">Prof. Michael Rodriguez</div>
-              <div className="text-sm text-gray-500">Materials Science</div>
+              <div className="text-sm text-gray-500">
+                <div className="font-semibold">Prof. Michael Rodriguez</div>
+                <div>MIT Quantum Computing Center • 2024</div>
+              </div>
             </Card>
             
-            <Card className="p-6">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="mb-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+                  <span className="text-purple-600 font-bold text-sm">BIO</span>
+                </div>
+                <h3 className="font-semibold text-lg mb-2">CRISPR Gene Editing</h3>
+                <Badge variant="secondary" className="mb-3">Biotechnology</Badge>
               </div>
               <p className="text-gray-600 mb-4">
-                "The training programs gave me the skills I needed to advance my career. 
-                Highly recommend for any serious researcher."
+                Breakthrough in precision gene editing techniques for treating genetic disorders. Successfully demonstrated 95% accuracy in targeted DNA modifications in human cell cultures.
               </p>
-              <div className="font-semibold">Dr. Emily Watson</div>
-              <div className="text-sm text-gray-500">Quantum Computing</div>
+              <div className="text-sm text-gray-500">
+                <div className="font-semibold">Dr. Emily Watson</div>
+                <div>Harvard Medical School • 2023</div>
+              </div>
             </Card>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-gray-600 mb-4">
+              Our supported researchers have published 150+ papers in top-tier journals and secured $25M+ in follow-on funding.
+            </p>
+            <Button variant="outline" asChild>
+              <Link href="/contact">Discuss Your Research Project</Link>
+            </Button>
           </div>
         </div>
       </section>
