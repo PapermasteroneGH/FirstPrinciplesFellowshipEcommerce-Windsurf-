@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -5,6 +8,43 @@ import { BookOpen, Users, Lightbulb, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1920&h=1080&fit=crop",
+      title: "Stanford INTERSECT Competition",
+      description: "Finalist in Young Researcher Competition"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&h=1080&fit=crop",
+      title: "MIT Research Symposium",
+      description: "Best Innovation Award 2024"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1517245386807-bb0f887752e4?w=1920&h=1080&fit=crop",
+      title: "Harvard Medical Conference",
+      description: "Excellence in Biotechnology Research"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1554224154-260325db02d2?w=1920&h=1080&fit=crop",
+      title: "Quantum Computing Summit",
+      description: "Breakthrough Achievement Award"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1517245386807-bb0f887752e4?w=1920&h=1080&fit=crop",
+      title: "International Research Forum",
+      description: "Outstanding Contribution Award"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Navigation */}
@@ -25,9 +65,28 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="flex-1 container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Hero Section with Background Carousel */}
+      <section className="relative flex-1 container mx-auto px-4 py-20 overflow-hidden">
+        {/* Background Carousel */}
+        <div className="absolute inset-0 -z-10">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-30' : 'opacity-0'
+              }`}
+            >
+              <div
+                className="w-full h-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${slide.image})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20" />
+            </div>
+          ))}
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
             Empowering Scientific Research
           </Badge>
@@ -49,6 +108,32 @@ export default function Home() {
             <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
               <Link href="/about">Learn More</Link>
             </Button>
+          </div>
+
+          {/* Carousel Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentSlide 
+                    ? 'bg-blue-600 w-8' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Current Slide Info */}
+          <div className="mt-6 text-center">
+            <h3 className="text-lg font-semibold text-gray-800">
+              {slides[currentSlide].title}
+            </h3>
+            <p className="text-gray-600">
+              {slides[currentSlide].description}
+            </p>
           </div>
         </div>
       </section>
@@ -300,8 +385,8 @@ export default function Home() {
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="mailto:info@firstprinciples.org" className="hover:text-white transition-colors">info@firstprinciples.org</a></li>
-                <li><a href="tel:+15551234567" className="hover:text-white transition-colors">+1 (555) 123-4567</a></li>
+                <li><a href="mailto:firstprinciplesinquiries@gmail.com" className="hover:text-white transition-colors">firstprinciplesinquiries@gmail.com</a></li>
+                <li><a href="tel:+62 852 140-0077" className="hover:text-white transition-colors">+62 (852) 140-0077</a></li>
                 <li><a href="https://maps.google.com/?q=123+Research+Ave+Science+City+SC+12345" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">123 Research Ave</a></li>
                 <li><a href="https://maps.google.com/?q=123+Research+Ave+Science+City+SC+12345" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Science City, SC 12345</a></li>
               </ul>
