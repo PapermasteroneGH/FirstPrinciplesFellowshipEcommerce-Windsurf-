@@ -40,8 +40,12 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+      setCurrentSlide((prev) => {
+        const nextSlide = (prev + 1) % slides.length;
+        console.log('Changing to slide:', nextSlide);
+        return nextSlide;
+      });
+    }, 3000); // Reduced to 3 seconds for testing
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -72,13 +76,17 @@ export default function Home() {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
                 index === currentSlide ? 'opacity-30' : 'opacity-0'
               }`}
             >
-              <div
-                className="w-full h-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${slide.image})` }}
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+                loading="eager"
+                onError={(e) => console.log('Image failed to load:', slide.image)}
+                onLoad={() => console.log('Image loaded:', slide.title)}
               />
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20" />
             </div>
@@ -128,6 +136,9 @@ export default function Home() {
 
           {/* Current Slide Info */}
           <div className="mt-6 text-center">
+            <div className="text-xs text-gray-500 mb-2">
+              Slide {currentSlide + 1} of {slides.length}
+            </div>
             <h3 className="text-lg font-semibold text-gray-800">
               {slides[currentSlide].title}
             </h3>
