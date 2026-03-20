@@ -8,11 +8,31 @@ export default function ContactPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { gradient: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', title: 'Research Collaboration' },
-    { gradient: 'linear-gradient(135deg, #10B981, #3B82F6)', title: 'Innovation Hub' },
-    { gradient: 'linear-gradient(135deg, #8B5CF6, #EC4899)', title: 'Global Network' },
-    { gradient: 'linear-gradient(135deg, #F97316, #EF4444)', title: 'Advanced Research' },
-    { gradient: 'linear-gradient(135deg, #14B8A6, #10B981)', title: 'Future Technologies' }
+    { 
+      gradient: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', 
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e4041f?w=1920&h=1080&fit=crop',
+      title: 'Research Collaboration' 
+    },
+    { 
+      gradient: 'linear-gradient(135deg, #10B981, #3B82F6)', 
+      image: 'https://images.unsplash.com/photo-1521791136064-e73952e038b7?w=1920&h=1080&fit=crop',
+      title: 'Innovation Hub' 
+    },
+    { 
+      gradient: 'linear-gradient(135deg, #8B5CF6, #EC4899)', 
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop',
+      title: 'Global Network' 
+    },
+    { 
+      gradient: 'linear-gradient(135deg, #F97316, #EF4444)', 
+      image: 'https://images.unsplash.com/photo-1551434679-e076c223a692?w=1920&h=1080&fit=crop',
+      title: 'Advanced Research' 
+    },
+    { 
+      gradient: 'linear-gradient(135deg, #14B8A6, #10B981)', 
+      image: 'https://images.unsplash.com/photo-1517245386807-bb0f887752e4?w=1920&h=1080&fit=crop',
+      title: 'Future Technologies' 
+    }
   ];
 
   useEffect(() => {
@@ -24,6 +44,22 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen" style={{background: slides[currentSlide].gradient}}>
+      {/* Background Image Layer */}
+      <div 
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `url(${slides[currentSlide].image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.3,
+          zIndex: 0
+        }}
+      />
+
       {/* Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -43,7 +79,7 @@ export default function ContactPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 min-h-screen" style={{paddingTop: '80px'}}>
+      <section className="relative py-20 min-h-screen" style={{paddingTop: '80px', zIndex: 1}}>
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" style={{color: 'white'}}>
@@ -90,13 +126,13 @@ export default function ContactPage() {
             border: '2px solid white'
           }}>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              � GRADIENT CAROUSEL WORKING!
+              🖼️ IMAGE + GRADIENT CAROUSEL!
             </div>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              Current gradient: {slides[currentSlide].title}
+              Current: {slides[currentSlide].title}
             </div>
             <div className="text-sm" style={{color: 'white'}}>
-              Beautiful gradients changing every 3 seconds!
+              Beautiful images with gradient overlays!
             </div>
           </div>
         </div>

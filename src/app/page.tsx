@@ -11,11 +11,31 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { gradient: 'linear-gradient(135deg, #6366F1, #3B82F6)', title: 'Stanford INTERSECT Competition' },
-    { gradient: 'linear-gradient(135deg, #8B5CF6, #6366F1)', title: 'MIT Research Symposium' },
-    { gradient: 'linear-gradient(135deg, #EC4899, #8B5CF6)', title: 'Harvard Medical Conference' },
-    { gradient: 'linear-gradient(135deg, #EF4444, #EC4899)', title: 'Quantum Computing Summit' },
-    { gradient: 'linear-gradient(135deg, #10B981, #14B8A6)', title: 'International Research Forum' }
+    { 
+      gradient: 'linear-gradient(135deg, #6366F1, #3B82F6)', 
+      image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1920&h=1080&fit=crop',
+      title: 'Stanford INTERSECT Competition' 
+    },
+    { 
+      gradient: 'linear-gradient(135deg, #8B5CF6, #6366F1)', 
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&h=1080&fit=crop',
+      title: 'MIT Research Symposium' 
+    },
+    { 
+      gradient: 'linear-gradient(135deg, #EC4899, #8B5CF6)', 
+      image: 'https://images.unsplash.com/photo-1517245386807-bb0f887752e4?w=1920&h=1080&fit=crop',
+      title: 'Harvard Medical Conference' 
+    },
+    { 
+      gradient: 'linear-gradient(135deg, #EF4444, #EC4899)', 
+      image: 'https://images.unsplash.com/photo-1554224154-260325db02d2?w=1920&h=1080&fit=crop',
+      title: 'Quantum Computing Summit' 
+    },
+    { 
+      gradient: 'linear-gradient(135deg, #10B981, #14B8A6)', 
+      image: 'https://images.unsplash.com/photo-1551434679-e076c223a692?w=1920&h=1080&fit=crop',
+      title: 'International Research Forum' 
+    }
   ];
 
   useEffect(() => {
@@ -27,6 +47,22 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen" style={{background: slides[currentSlide].gradient}}>
+      {/* Background Image Layer */}
+      <div 
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `url(${slides[currentSlide].image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.3,
+          zIndex: 0
+        }}
+      />
+
       {/* Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -46,7 +82,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative flex-1 container mx-auto px-4 py-20">
+      <section className="relative flex-1 container mx-auto px-4 py-20" style={{zIndex: 1}}>
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <Badge className="mb-4" style={{backgroundColor: 'rgba(255, 255, 255, 0.2)', color: 'white'}}>
@@ -107,13 +143,13 @@ export default function Home() {
             border: '2px solid white'
           }}>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              � HOMEPAGE GRADIENT CAROUSEL!
+              🖼️ HOMEPAGE IMAGE + GRADIENT!
             </div>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              Current gradient: {slides[currentSlide].title}
+              Current: {slides[currentSlide].title}
             </div>
             <div className="text-sm" style={{color: 'white'}}>
-              Competition-themed gradients working perfectly!
+              Competition images with gradient overlays!
             </div>
           </div>
         </div>
