@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -7,8 +8,25 @@ import { BookOpen, Users, Lightbulb, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    { gradient: 'linear-gradient(135deg, #6366F1 0%, #3B82F6 100%)', title: 'Stanford INTERSECT Competition' },
+    { gradient: 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%)', title: 'MIT Research Symposium' },
+    { gradient: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)', title: 'Harvard Medical Conference' },
+    { gradient: 'linear-gradient(135deg, #EF4444 0%, #EC4899 100%)', title: 'Quantum Computing Summit' },
+    { gradient: 'linear-gradient(135deg, #10B981 0%, #14B8A6 100%)', title: 'International Research Forum' }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen" style={{backgroundColor: slides[currentSlide].gradient}}>
       {/* Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -27,42 +45,72 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section with Strong Background */}
-      <section className="relative flex-1 container mx-auto px-4 py-20" style={{
-        background: 'linear-gradient(135deg, #6366F1 0%, #3B82F6 100%)'
-      }}>
+      {/* Hero Section */}
+      <section className="relative flex-1 container mx-auto px-4 py-20">
         {/* Hero Content */}
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-          <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30">
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <Badge className="mb-4" style={{backgroundColor: 'rgba(255, 255, 255, 0.2)', color: 'white'}}>
             Empowering Scientific Research
           </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight" style={{color: 'white'}}>
             Advancing Research Through
-            <span className="text-yellow-300"> First Principles</span>
+            <span style={{color: '#FDE047'}}> First Principles</span>
           </h1>
-          <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed" style={{color: 'white'}}>
             We provide comprehensive technical consulting, training, mentorship, and sponsorships 
             to support the next generation of scientific researchers and innovators.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6 bg-white text-blue-600 hover:bg-gray-100" asChild>
+            <Button size="lg" className="text-lg px-8 py-6" style={{backgroundColor: 'white', color: '#3B82F6'}} asChild>
               <Link href="#services">
                 Learn About Our Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 text-white border-white hover:bg-white hover:text-blue-600" asChild>
+            <Button variant="outline" size="lg" className="text-lg px-8 py-6" style={{borderColor: 'white', color: 'white'}} asChild>
               <Link href="/about">Learn More</Link>
             </Button>
           </div>
 
-          {/* Debug Info */}
-          <div className="mt-8 text-center bg-white/20 p-4 rounded-lg">
-            <div className="text-sm mb-2">
-              ✅ Background should be visible (indigo to blue gradient)
+          {/* Carousel Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                style={{
+                  width: index === currentSlide ? '32px' : '8px',
+                  height: '8px',
+                  borderRadius: '4px',
+                  backgroundColor: index === currentSlide ? 'white' : 'rgba(255, 255, 255, 0.5)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Current Slide Info */}
+          <div className="mt-6 text-center">
+            <div className="text-sm mb-2" style={{color: 'white'}}>
+              Slide {currentSlide + 1} of {slides.length}
             </div>
-            <div className="text-sm">
-              Text should be white with yellow accent
+            <h3 className="text-lg font-semibold" style={{color: 'white'}}>
+              {slides[currentSlide].title}
+            </h3>
+          </div>
+
+          {/* Debug Info */}
+          <div className="mt-8 text-center p-4 rounded-lg" style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+            border: '2px solid white'
+          }}>
+            <div className="text-sm mb-2" style={{color: 'white'}}>
+              🎨 HOMEPAGE GRADIENT CAROUSEL!
+            </div>
+            <div className="text-sm" style={{color: 'white'}}>
+              Background changes every 3 seconds • Click dots to navigate
             </div>
           </div>
         </div>

@@ -1,11 +1,29 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Clock, Lightbulb } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    { gradient: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)', title: 'Research Collaboration' },
+    { gradient: 'linear-gradient(135deg, #10B981 0%, #3B82F6 100%)', title: 'Innovation Hub' },
+    { gradient: 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)', title: 'Global Network' },
+    { gradient: 'linear-gradient(135deg, #F97316 0%, #EF4444 100%)', title: 'Advanced Research' },
+    { gradient: 'linear-gradient(135deg, #14B8A6 0%, #10B981 100%)', title: 'Future Technologies' }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   return (
-    <div className="min-h-screen" style={{backgroundColor: '#3B82F6'}}>
+    <div className="min-h-screen" style={{backgroundColor: slides[currentSlide].gradient}}>
       {/* Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -24,12 +42,10 @@ export default function ContactPage() {
         </div>
       </header>
 
-      {/* Hero Section with Strong Background */}
-      <section className="relative py-20 min-h-screen" style={{
-        background: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)'
-      }}>
+      {/* Hero Section */}
+      <section className="relative py-20 min-h-screen" style={{paddingTop: '80px'}}>
         {/* Hero Content */}
-        <div className="relative z-10 max-w-4xl mx-auto text-center" style={{paddingTop: '80px'}}>
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" style={{color: 'white'}}>
             Get in Touch with
             <span style={{color: '#FDE047'}}> First Principles Fellowship</span>
@@ -39,16 +55,45 @@ export default function ContactPage() {
             We're here to help and would love to hear from you.
           </p>
 
+          {/* Carousel Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                style={{
+                  width: index === currentSlide ? '32px' : '8px',
+                  height: '8px',
+                  borderRadius: '4px',
+                  backgroundColor: index === currentSlide ? 'white' : 'rgba(255, 255, 255, 0.5)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Current Slide Info */}
+          <div className="mt-6 text-center">
+            <div className="text-sm mb-2" style={{color: 'white'}}>
+              Slide {currentSlide + 1} of {slides.length}
+            </div>
+            <h3 className="text-lg font-semibold" style={{color: 'white'}}>
+              {slides[currentSlide].title}
+            </h3>
+          </div>
+
           {/* Debug Info */}
           <div className="mt-8 text-center p-4 rounded-lg" style={{
             backgroundColor: 'rgba(255, 255, 255, 0.2)',
             border: '2px solid white'
           }}>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              🔥 SOLID BLUE BACKGROUND TEST
+              🎨 GRADIENT CAROUSEL WORKING!
             </div>
             <div className="text-sm" style={{color: 'white'}}>
-              If you see white text on blue background, inline styles work!
+              Background changes every 3 seconds • Click dots to navigate
             </div>
           </div>
         </div>
