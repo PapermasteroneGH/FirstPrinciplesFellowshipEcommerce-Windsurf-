@@ -73,19 +73,35 @@ export default function ContactPage() {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === currentSlide ? 'opacity-30' : 'opacity-0'
+              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
               }`}
             >
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className="w-full h-full object-cover"
-                loading="eager"
-                onError={(e) => console.log('Image failed to load:', slide.image)}
-                onLoad={() => console.log('Image loaded:', slide.title)}
+              {/* Fallback gradient background */}
+              <div className={`absolute inset-0 ${
+                index === 0 ? 'bg-gradient-to-br from-blue-400 to-purple-600' :
+                index === 1 ? 'bg-gradient-to-br from-green-400 to-blue-600' :
+                index === 2 ? 'bg-gradient-to-br from-purple-400 to-pink-600' :
+                index === 3 ? 'bg-gradient-to-br from-orange-400 to-red-600' :
+                'bg-gradient-to-br from-teal-400 to-green-600'
+              }`} />
+              
+              {/* Image overlay with fallback */}
+              <div
+                className="absolute inset-0 bg-cover bg-center opacity-50"
+                style={{ 
+                  backgroundImage: `url(${slide.image})`,
+                  backgroundColor: index === 0 ? '#3B82F6' :
+                                   index === 1 ? '#10B981' :
+                                   index === 2 ? '#8B5CF6' :
+                                   index === 3 ? '#F97316' : '#14B8A6'
+                }}
+                onError={(e) => {
+                  console.log('Image failed to load, using fallback');
+                  e.currentTarget.style.backgroundImage = 'none';
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10" />
             </div>
           ))}
         </div>
