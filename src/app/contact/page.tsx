@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen">
       {/* Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -24,31 +24,28 @@ export default function ContactPage() {
         </div>
       </header>
 
-      {/* Hero Section with Background Carousel */}
-      <section className="relative py-20 overflow-hidden">
-        {/* Simple Test Background */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-500 to-purple-600">
-          <div className="absolute inset-0 bg-black/20"></div>
-        </div>
-
+      {/* Hero Section with Strong Background */}
+      <section className="relative py-20 min-h-screen" style={{
+        background: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)'
+      }}>
         {/* Hero Content */}
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Get in Touch with
-            <span className="text-blue-600"> First Principles Fellowship</span>
+            <span className="text-yellow-300"> First Principles Fellowship</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
             Have questions about our services? Want to learn more about how we can support your research? 
             We're here to help and would love to hear from you.
           </p>
 
           {/* Debug Info */}
-          <div className="mt-8 text-center">
-            <div className="text-xs text-gray-500 mb-2">
-              Background should be visible (blue to purple gradient)
+          <div className="mt-8 text-center bg-white/20 p-4 rounded-lg">
+            <div className="text-sm mb-2">
+              ✅ Background should be visible (blue to purple gradient)
             </div>
-            <div className="text-xs text-gray-500">
-              If you see this text but no background, there's a CSS issue
+            <div className="text-sm">
+              Text should be white with yellow accent
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="flex flex-col min-h-screen">
       {/* Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -27,45 +27,42 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section with Background Carousel */}
-      <section className="relative flex-1 container mx-auto px-4 py-20 overflow-hidden">
-        {/* Simple Test Background */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-500 to-blue-600">
-          <div className="absolute inset-0 bg-black/20"></div>
-        </div>
-
+      {/* Hero Section with Strong Background */}
+      <section className="relative flex-1 container mx-auto px-4 py-20" style={{
+        background: 'linear-gradient(135deg, #6366F1 0%, #3B82F6 100%)'
+      }}>
         {/* Hero Content */}
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+          <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30">
             Empowering Scientific Research
           </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Advancing Research Through
-            <span className="text-blue-600"> First Principles</span>
+            <span className="text-yellow-300"> First Principles</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
             We provide comprehensive technical consulting, training, mentorship, and sponsorships 
             to support the next generation of scientific researchers and innovators.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6" asChild>
+            <Button size="lg" className="text-lg px-8 py-6 bg-white text-blue-600 hover:bg-gray-100" asChild>
               <Link href="#services">
                 Learn About Our Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
+            <Button variant="outline" size="lg" className="text-lg px-8 py-6 text-white border-white hover:bg-white hover:text-blue-600" asChild>
               <Link href="/about">Learn More</Link>
             </Button>
           </div>
 
           {/* Debug Info */}
-          <div className="mt-8 text-center">
-            <div className="text-xs text-gray-500 mb-2">
-              Background should be visible (indigo to blue gradient)
+          <div className="mt-8 text-center bg-white/20 p-4 rounded-lg">
+            <div className="text-sm mb-2">
+              ✅ Background should be visible (indigo to blue gradient)
             </div>
-            <div className="text-xs text-gray-500">
-              If you see this text but no background, there's a CSS issue
+            <div className="text-sm">
+              Text should be white with yellow accent
             </div>
           </div>
         </div>
