@@ -1,9 +1,51 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Clock, Lightbulb } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e4041f?w=1920&h=1080&fit=crop",
+      title: "Research Collaboration",
+      description: "Working together with global partners"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1521791136064-e73952e038b7?w=1920&h=1080&fit=crop",
+      title: "Innovation Hub",
+      description: "Where ideas become reality"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop",
+      title: "Global Network",
+      description: "Connecting researchers worldwide"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1551434679-e076c223a692?w=1920&h=1080&fit=crop",
+      title: "Advanced Research",
+      description: "Pushing boundaries of knowledge"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1517245386807-bb0f887752e4?w=1920&h=1080&fit=crop",
+      title: "Future Technologies",
+      description: "Building tomorrow's solutions"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => {
+        const nextSlide = (prev + 1) % slides.length;
+        console.log('Changing to slide:', nextSlide);
+        return nextSlide;
+      });
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Navigation */}
@@ -24,17 +66,67 @@ export default function ContactPage() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Get in Touch with
-              <span className="text-blue-600"> First Principles Fellowship</span>
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Have questions about our services? Want to learn more about how we can support your research? 
-              We're here to help and would love to hear from you.
+      {/* Hero Section with Background Carousel */}
+      <section className="relative py-20 overflow-hidden">
+        {/* Background Carousel */}
+        <div className="absolute inset-0 -z-10">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentSlide ? 'opacity-30' : 'opacity-0'
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+                loading="eager"
+                onError={(e) => console.log('Image failed to load:', slide.image)}
+                onLoad={() => console.log('Image loaded:', slide.title)}
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20" />
+            </div>
+          ))}
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Get in Touch with
+            <span className="text-blue-600"> First Principles Fellowship</span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Have questions about our services? Want to learn more about how we can support your research? 
+            We're here to help and would love to hear from you.
+          </p>
+
+          {/* Carousel Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentSlide 
+                    ? 'bg-blue-600 w-8' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Current Slide Info */}
+          <div className="mt-6 text-center">
+            <div className="text-xs text-gray-500 mb-2">
+              Slide {currentSlide + 1} of {slides.length}
+            </div>
+            <h3 className="text-lg font-semibold text-gray-800">
+              {slides[currentSlide].title}
+            </h3>
+            <p className="text-gray-600">
+              {slides[currentSlide].description}
             </p>
           </div>
         </div>
