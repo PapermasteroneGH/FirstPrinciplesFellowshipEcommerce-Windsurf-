@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,47 +7,6 @@ import { BookOpen, Users, Lightbulb, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    {
-      image: "https://picsum.photos/1920/1080?random=6",
-      title: "Stanford INTERSECT Competition",
-      description: "Finalist in Young Researcher Competition"
-    },
-    {
-      image: "https://picsum.photos/1920/1080?random=7",
-      title: "MIT Research Symposium",
-      description: "Best Innovation Award 2024"
-    },
-    {
-      image: "https://picsum.photos/1920/1080?random=8",
-      title: "Harvard Medical Conference",
-      description: "Excellence in Biotechnology Research"
-    },
-    {
-      image: "https://picsum.photos/1920/1080?random=9",
-      title: "Quantum Computing Summit",
-      description: "Breakthrough Achievement Award"
-    },
-    {
-      image: "https://picsum.photos/1920/1080?random=10",
-      title: "International Research Forum",
-      description: "Outstanding Contribution Award"
-    }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => {
-        const nextSlide = (prev + 1) % slides.length;
-        console.log('Changing to slide:', nextSlide);
-        return nextSlide;
-      });
-    }, 3000); // Reduced to 3 seconds for testing
-    return () => clearInterval(timer);
-  }, [slides.length]);
-
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Navigation */}
@@ -71,42 +29,9 @@ export default function Home() {
 
       {/* Hero Section with Background Carousel */}
       <section className="relative flex-1 container mx-auto px-4 py-20 overflow-hidden">
-        {/* Background Carousel */}
-        <div className="absolute inset-0 -z-10">
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-                index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-              }`}
-            >
-              {/* Fallback gradient background */}
-              <div className={`absolute inset-0 ${
-                index === 0 ? 'bg-gradient-to-br from-indigo-400 to-blue-600' :
-                index === 1 ? 'bg-gradient-to-br from-purple-400 to-indigo-600' :
-                index === 2 ? 'bg-gradient-to-br from-pink-400 to-purple-600' :
-                index === 3 ? 'bg-gradient-to-br from-red-400 to-pink-600' :
-                'bg-gradient-to-br from-green-400 to-teal-600'
-              }`} />
-              
-              {/* Image overlay with fallback */}
-              <div
-                className="absolute inset-0 bg-cover bg-center opacity-50"
-                style={{ 
-                  backgroundImage: `url(${slide.image})`,
-                  backgroundColor: index === 0 ? '#6366F1' :
-                                   index === 1 ? '#8B5CF6' :
-                                   index === 2 ? '#EC4899' :
-                                   index === 3 ? '#EF4444' : '#10B981'
-                }}
-                onError={(e) => {
-                  console.log('Image failed to load, using fallback');
-                  e.currentTarget.style.backgroundImage = 'none';
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10" />
-            </div>
-          ))}
+        {/* Simple Test Background */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-500 to-blue-600">
+          <div className="absolute inset-0 bg-black/20"></div>
         </div>
 
         {/* Hero Content */}
@@ -134,33 +59,14 @@ export default function Home() {
             </Button>
           </div>
 
-          {/* Carousel Indicators */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentSlide 
-                    ? 'bg-blue-600 w-8' 
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Current Slide Info */}
-          <div className="mt-6 text-center">
+          {/* Debug Info */}
+          <div className="mt-8 text-center">
             <div className="text-xs text-gray-500 mb-2">
-              Slide {currentSlide + 1} of {slides.length}
+              Background should be visible (indigo to blue gradient)
             </div>
-            <h3 className="text-lg font-semibold text-gray-800">
-              {slides[currentSlide].title}
-            </h3>
-            <p className="text-gray-600">
-              {slides[currentSlide].description}
-            </p>
+            <div className="text-xs text-gray-500">
+              If you see this text but no background, there's a CSS issue
+            </div>
           </div>
         </div>
       </section>
