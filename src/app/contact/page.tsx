@@ -8,11 +8,11 @@ export default function ContactPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { gradient: '#3B82F6', title: 'Research Collaboration' },
-    { gradient: '#10B981', title: 'Innovation Hub' },
-    { gradient: '#8B5CF6', title: 'Global Network' },
-    { gradient: '#F97316', title: 'Advanced Research' },
-    { gradient: '#14B8A6', title: 'Future Technologies' }
+    { gradient: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', title: 'Research Collaboration' },
+    { gradient: 'linear-gradient(135deg, #10B981, #3B82F6)', title: 'Innovation Hub' },
+    { gradient: 'linear-gradient(135deg, #8B5CF6, #EC4899)', title: 'Global Network' },
+    { gradient: 'linear-gradient(135deg, #F97316, #EF4444)', title: 'Advanced Research' },
+    { gradient: 'linear-gradient(135deg, #14B8A6, #10B981)', title: 'Future Technologies' }
   ];
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function ContactPage() {
   }, [slides.length]);
 
   return (
-    <div className="min-h-screen" style={{backgroundColor: slides[currentSlide].gradient}}>
+    <div className="min-h-screen" style={{background: slides[currentSlide].gradient}}>
       {/* Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -90,13 +90,13 @@ export default function ContactPage() {
             border: '2px solid white'
           }}>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              🎨 SOLID COLOR CAROUSEL TEST
+              � GRADIENT CAROUSEL WORKING!
             </div>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              Current color: {slides[currentSlide].gradient}
+              Current gradient: {slides[currentSlide].title}
             </div>
             <div className="text-sm" style={{color: 'white'}}>
-              If you see different solid colors, we can add gradients back
+              Beautiful gradients changing every 3 seconds!
             </div>
           </div>
         </div>

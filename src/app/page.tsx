@@ -11,11 +11,11 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { gradient: '#6366F1', title: 'Stanford INTERSECT Competition' },
-    { gradient: '#8B5CF6', title: 'MIT Research Symposium' },
-    { gradient: '#EC4899', title: 'Harvard Medical Conference' },
-    { gradient: '#EF4444', title: 'Quantum Computing Summit' },
-    { gradient: '#10B981', title: 'International Research Forum' }
+    { gradient: 'linear-gradient(135deg, #6366F1, #3B82F6)', title: 'Stanford INTERSECT Competition' },
+    { gradient: 'linear-gradient(135deg, #8B5CF6, #6366F1)', title: 'MIT Research Symposium' },
+    { gradient: 'linear-gradient(135deg, #EC4899, #8B5CF6)', title: 'Harvard Medical Conference' },
+    { gradient: 'linear-gradient(135deg, #EF4444, #EC4899)', title: 'Quantum Computing Summit' },
+    { gradient: 'linear-gradient(135deg, #10B981, #14B8A6)', title: 'International Research Forum' }
   ];
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Home() {
   }, [slides.length]);
 
   return (
-    <div className="flex flex-col min-h-screen" style={{backgroundColor: slides[currentSlide].gradient}}>
+    <div className="flex flex-col min-h-screen" style={{background: slides[currentSlide].gradient}}>
       {/* Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -107,13 +107,13 @@ export default function Home() {
             border: '2px solid white'
           }}>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              🎨 HOMEPAGE SOLID COLOR TEST
+              � HOMEPAGE GRADIENT CAROUSEL!
             </div>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              Current color: {slides[currentSlide].gradient}
+              Current gradient: {slides[currentSlide].title}
             </div>
             <div className="text-sm" style={{color: 'white'}}>
-              If you see different colors, the carousel works!
+              Competition-themed gradients working perfectly!
             </div>
           </div>
         </div>
