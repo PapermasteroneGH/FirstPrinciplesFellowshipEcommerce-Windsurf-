@@ -8,11 +8,11 @@ export default function ContactPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { gradient: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)', title: 'Research Collaboration' },
-    { gradient: 'linear-gradient(135deg, #10B981 0%, #3B82F6 100%)', title: 'Innovation Hub' },
-    { gradient: 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)', title: 'Global Network' },
-    { gradient: 'linear-gradient(135deg, #F97316 0%, #EF4444 100%)', title: 'Advanced Research' },
-    { gradient: 'linear-gradient(135deg, #14B8A6 0%, #10B981 100%)', title: 'Future Technologies' }
+    { gradient: '#3B82F6', title: 'Research Collaboration' },
+    { gradient: '#10B981', title: 'Innovation Hub' },
+    { gradient: '#8B5CF6', title: 'Global Network' },
+    { gradient: '#F97316', title: 'Advanced Research' },
+    { gradient: '#14B8A6', title: 'Future Technologies' }
   ];
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function ContactPage() {
   }, [slides.length]);
 
   return (
-    <div className="min-h-screen" style={{background: slides[currentSlide].gradient}}>
+    <div className="min-h-screen" style={{backgroundColor: slides[currentSlide].gradient}}>
       {/* Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -86,14 +86,17 @@ export default function ContactPage() {
 
           {/* Debug Info */}
           <div className="mt-8 text-center p-4 rounded-lg" style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
             border: '2px solid white'
           }}>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              🎨 GRADIENT CAROUSEL WORKING!
+              🎨 SOLID COLOR CAROUSEL TEST
+            </div>
+            <div className="text-sm mb-2" style={{color: 'white'}}>
+              Current color: {slides[currentSlide].gradient}
             </div>
             <div className="text-sm" style={{color: 'white'}}>
-              Background changes every 3 seconds • Click dots to navigate
+              If you see different solid colors, we can add gradients back
             </div>
           </div>
         </div>

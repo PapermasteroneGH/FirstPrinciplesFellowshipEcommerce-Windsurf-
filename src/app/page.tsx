@@ -11,11 +11,11 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { gradient: 'linear-gradient(135deg, #6366F1 0%, #3B82F6 100%)', title: 'Stanford INTERSECT Competition' },
-    { gradient: 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%)', title: 'MIT Research Symposium' },
-    { gradient: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)', title: 'Harvard Medical Conference' },
-    { gradient: 'linear-gradient(135deg, #EF4444 0%, #EC4899 100%)', title: 'Quantum Computing Summit' },
-    { gradient: 'linear-gradient(135deg, #10B981 0%, #14B8A6 100%)', title: 'International Research Forum' }
+    { gradient: '#6366F1', title: 'Stanford INTERSECT Competition' },
+    { gradient: '#8B5CF6', title: 'MIT Research Symposium' },
+    { gradient: '#EC4899', title: 'Harvard Medical Conference' },
+    { gradient: '#EF4444', title: 'Quantum Computing Summit' },
+    { gradient: '#10B981', title: 'International Research Forum' }
   ];
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Home() {
   }, [slides.length]);
 
   return (
-    <div className="flex flex-col min-h-screen" style={{background: slides[currentSlide].gradient}}>
+    <div className="flex flex-col min-h-screen" style={{backgroundColor: slides[currentSlide].gradient}}>
       {/* Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -103,14 +103,17 @@ export default function Home() {
 
           {/* Debug Info */}
           <div className="mt-8 text-center p-4 rounded-lg" style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
             border: '2px solid white'
           }}>
             <div className="text-sm mb-2" style={{color: 'white'}}>
-              🎨 HOMEPAGE GRADIENT CAROUSEL!
+              🎨 HOMEPAGE SOLID COLOR TEST
+            </div>
+            <div className="text-sm mb-2" style={{color: 'white'}}>
+              Current color: {slides[currentSlide].gradient}
             </div>
             <div className="text-sm" style={{color: 'white'}}>
-              Background changes every 3 seconds • Click dots to navigate
+              If you see different colors, the carousel works!
             </div>
           </div>
         </div>
