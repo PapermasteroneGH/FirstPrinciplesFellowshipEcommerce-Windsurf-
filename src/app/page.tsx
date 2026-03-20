@@ -12,27 +12,27 @@ export default function Home() {
 
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1920&h=1080&fit=crop",
+      image: "https://picsum.photos/1920/1080?random=6",
       title: "Stanford INTERSECT Competition",
       description: "Finalist in Young Researcher Competition"
     },
     {
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&h=1080&fit=crop",
+      image: "https://picsum.photos/1920/1080?random=7",
       title: "MIT Research Symposium",
       description: "Best Innovation Award 2024"
     },
     {
-      image: "https://images.unsplash.com/photo-1517245386807-bb0f887752e4?w=1920&h=1080&fit=crop",
+      image: "https://picsum.photos/1920/1080?random=8",
       title: "Harvard Medical Conference",
       description: "Excellence in Biotechnology Research"
     },
     {
-      image: "https://images.unsplash.com/photo-1554224154-260325db02d2?w=1920&h=1080&fit=crop",
+      image: "https://picsum.photos/1920/1080?random=9",
       title: "Quantum Computing Summit",
       description: "Breakthrough Achievement Award"
     },
     {
-      image: "https://images.unsplash.com/photo-1517245386807-bb0f887752e4?w=1920&h=1080&fit=crop",
+      image: "https://picsum.photos/1920/1080?random=10",
       title: "International Research Forum",
       description: "Outstanding Contribution Award"
     }

@@ -9,27 +9,27 @@ export default function ContactPage() {
 
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e4041f?w=1920&h=1080&fit=crop",
+      image: "https://picsum.photos/1920/1080?random=1",
       title: "Research Collaboration",
       description: "Working together with global partners"
     },
     {
-      image: "https://images.unsplash.com/photo-1521791136064-e73952e038b7?w=1920&h=1080&fit=crop",
+      image: "https://picsum.photos/1920/1080?random=2",
       title: "Innovation Hub",
       description: "Where ideas become reality"
     },
     {
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop",
+      image: "https://picsum.photos/1920/1080?random=3",
       title: "Global Network",
       description: "Connecting researchers worldwide"
     },
     {
-      image: "https://images.unsplash.com/photo-1551434679-e076c223a692?w=1920&h=1080&fit=crop",
+      image: "https://picsum.photos/1920/1080?random=4",
       title: "Advanced Research",
       description: "Pushing boundaries of knowledge"
     },
     {
-      image: "https://images.unsplash.com/photo-1517245386807-bb0f887752e4?w=1920&h=1080&fit=crop",
+      image: "https://picsum.photos/1920/1080?random=5",
       title: "Future Technologies",
       description: "Building tomorrow's solutions"
     }
