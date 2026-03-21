@@ -8,15 +8,15 @@ export default function AboutPage() {
   const team = [
     {
       name: "Iftitah Ranjana Ahtikiszi",
-      role: "Executive Director & Head of Technical Consulting",
+      role: "Student Executive Director & Technical Lead",
       expertise: "Control Systems & Design, IoT & Embedded Systems",
-      bio: "Former Harvard researcher with 15+ years of experience in neuroscience and experimental design. MIT professor specializing in advanced materials and research commercialization."
+      bio: "Student researcher passionate about first principles thinking and hands-on innovation. Leading technical workshops and mentoring fellow students in engineering and design."
     },
     {
       name: "Mikail Khalif Hajrin",
-      role: "Director of Training Programs & Mentorship Program Lead",
+      role: "Student Director of Programs & Mentorship Lead",
       expertise: "Quantum Computing & Data Science, Biotechnology & Innovation",
-      bio: "Stanford PhD focused on quantum computing applications in scientific research. Former biotech executive with extensive experience in research funding and development."
+      bio: "Student advocate for interdisciplinary research and peer learning. Organizing training programs and creating mentorship opportunities for students across STEM fields."
     }
   ];
 
@@ -78,8 +78,8 @@ export default function AboutPage() {
               <span className="text-blue-600"> Scientific Leaders</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              First Principles Fellowship is dedicated to advancing scientific research by providing 
-              comprehensive support, mentorship, and resources to researchers at every stage of their journey.
+              First Principles Fellowship is a student-led initiative dedicated to advancing scientific research by providing 
+              comprehensive support, mentorship, and resources to fellow students at every stage of their research journey.
             </p>
           </div>
         </div>
@@ -93,24 +93,24 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
                 <p className="text-lg text-gray-600 mb-4">
-                  To democratize access to high-quality research support and mentorship, enabling 
-                  researchers worldwide to pursue groundbreaking discoveries and innovations.
+                  To democratize access to high-quality research support and mentorship for students, enabling 
+                  fellow students worldwide to pursue groundbreaking discoveries and innovations.
                 </p>
                 <p className="text-lg text-gray-600">
-                  We believe that great ideas can come from anywhere, and our role is to provide 
-                  the structure, guidance, and resources needed to transform those ideas into reality.
+                  We believe that great ideas can come from anywhere, and our role as students is to provide 
+                  the structure, guidance, and peer support needed to transform those ideas into reality.
                 </p>
               </div>
               
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
                 <p className="text-lg text-gray-600 mb-4">
-                  A world where every researcher has access to the mentorship, resources, and 
-                  community needed to push the boundaries of human knowledge.
+                  A world where every student has access to the mentorship, resources, and 
+                  peer community needed to push the boundaries of human knowledge.
                 </p>
                 <p className="text-lg text-gray-600">
                   We envision a future where scientific breakthroughs are accelerated through 
-                  collaborative, first-principles thinking and shared knowledge across disciplines.
+                  student-led collaboration, first-principles thinking and shared knowledge across disciplines.
                 </p>
               </div>
             </div>
@@ -160,20 +160,20 @@ export default function AboutPage() {
           
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
-              <div className="text-gray-600">Researchers Supported</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
+              <div className="text-gray-600">Student Researchers Supported</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">50+</div>
-              <div className="text-gray-600">Partner Institutions</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">10+</div>
+              <div className="text-gray-600">Student Partner Institutions</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">100+</div>
-              <div className="text-gray-600">Projects Funded</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">20+</div>
+              <div className="text-gray-600">Student Projects Funded</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600 mb-2">25+</div>
-              <div className="text-gray-600">Expert Mentors</div>
+              <div className="text-4xl font-bold text-orange-600 mb-2">5+</div>
+              <div className="text-gray-600">Student Mentors</div>
             </div>
           </div>
         </div>
@@ -187,7 +187,7 @@ export default function AboutPage() {
               Meet Our Team
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              World-class researchers and educators dedicated to your success
+              Student leaders passionate about empowering fellow students in research and innovation
             </p>
           </div>
           
