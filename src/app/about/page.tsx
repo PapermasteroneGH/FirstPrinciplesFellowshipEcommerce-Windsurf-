@@ -234,7 +234,7 @@ export default function AboutPage() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 text-white border-white hover:bg-white hover:text-blue-600" asChild>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white" asChild>
               <Link href="mailto:firstprincefelshipartners@gmail.com">Become a Mentor</Link>
             </Button>
           </div>
