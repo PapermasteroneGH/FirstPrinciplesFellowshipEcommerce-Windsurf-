@@ -112,28 +112,9 @@ export default function ContactPage() {
 
           {/* Current Slide Info */}
           <div className="mt-6 text-center">
-            <div className="text-sm mb-2" style={{color: 'white'}}>
-              Slide {currentSlide + 1} of {slides.length}
-            </div>
             <h3 className="text-lg font-semibold" style={{color: 'white'}}>
               {slides[currentSlide].title}
             </h3>
-          </div>
-
-          {/* Debug Info */}
-          <div className="mt-8 text-center p-4 rounded-lg" style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            border: '2px solid white'
-          }}>
-            <div className="text-sm mb-2" style={{color: 'white'}}>
-              🖼️ IMAGE + GRADIENT CAROUSEL!
-            </div>
-            <div className="text-sm mb-2" style={{color: 'white'}}>
-              Current: {slides[currentSlide].title}
-            </div>
-            <div className="text-sm" style={{color: 'white'}}>
-              Beautiful images with gradient overlays!
-            </div>
           </div>
         </div>
       </section>
