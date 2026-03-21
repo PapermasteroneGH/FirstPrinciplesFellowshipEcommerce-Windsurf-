@@ -7,28 +7,16 @@ import Link from "next/link";
 export default function AboutPage() {
   const team = [
     {
-      name: "Dr. Sarah Chen",
-      role: "Executive Director",
-      expertise: "Neuroscience & Research Methodology",
-      bio: "Former Harvard researcher with 15+ years of experience in neuroscience and experimental design."
+      name: "Iftitah Ranjana Ahtikiszi",
+      role: "Executive Director & Head of Technical Consulting",
+      expertise: "Control Systems & Design, IoT & Embedded Systems",
+      bio: "Former Harvard researcher with 15+ years of experience in neuroscience and experimental design. MIT professor specializing in advanced materials and research commercialization."
     },
     {
-      name: "Prof. Michael Rodriguez",
-      role: "Head of Technical Consulting",
-      expertise: "Materials Science & Engineering",
-      bio: "MIT professor specializing in advanced materials and research commercialization."
-    },
-    {
-      name: "Dr. Emily Watson",
-      role: "Director of Training Programs",
-      expertise: "Quantum Computing & Data Science",
-      bio: "Stanford PhD focused on quantum computing applications in scientific research."
-    },
-    {
-      name: "Dr. James Liu",
-      role: "Mentorship Program Lead",
-      expertise: "Biotechnology & Innovation",
-      bio: "Former biotech executive with extensive experience in research funding and development."
+      name: "Mikail Khalif Hajrin",
+      role: "Director of Training Programs & Mentorship Program Lead",
+      expertise: "Quantum Computing & Data Science, Biotechnology & Innovation",
+      bio: "Stanford PhD focused on quantum computing applications in scientific research. Former biotech executive with extensive experience in research funding and development."
     }
   ];
 
