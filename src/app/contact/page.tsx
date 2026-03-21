@@ -126,17 +126,15 @@ export default function ContactPage() {
             <div className="bg-white p-6 rounded-lg shadow-sm border">
               <h3 className="text-xl font-semibold mb-4 flex items-center">
                 <MapPin className="h-5 w-5 mr-2" />
-                Visit Us
+                Online Operation
               </h3>
               <p className="text-gray-600">
-                123 Research Avenue<br />
-                Science City, SC 12345<br />
-                United States
+                We operate entirely online to serve researchers worldwide.<br />
+                Available for virtual consultations and support.
               </p>
-              <div className="flex items-center text-sm text-gray-500 mt-3">
-                <Clock className="h-4 w-4 mr-2" />
-                Mon-Fri: 9:00 AM - 6:00 PM EST
-              </div>
+              <p className="text-sm text-gray-500 mt-3">
+                Serving students globally with digital-first approach
+              </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border">

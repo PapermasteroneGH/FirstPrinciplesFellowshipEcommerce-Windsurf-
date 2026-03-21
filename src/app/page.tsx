@@ -383,10 +383,10 @@ export default function Home() {
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="mailto:firstprinciplesinquiries@gmail.com" className="hover:text-white transition-colors">firstprinciplesinquiries@gmail.com</a></li>
-                <li><a href="tel:+62 852 140-0077" className="hover:text-white transition-colors">+62 (852) 140-0077</a></li>
-                <li><a href="https://maps.google.com/?q=123+Research+Ave+Science+City+SC+12345" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">123 Research Ave</a></li>
-                <li><a href="https://maps.google.com/?q=123+Research+Ave+Science+City+SC+12345" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Science City, SC 12345</a></li>
+                <li><a href="mailto:firstprincefelshiinquiries@gmail.com" className="hover:text-white transition-colors">firstprincefelshiinquiries@gmail.com</a></li>
+                <li><a href="tel:+62 852-1400-0779" className="hover:text-white transition-colors">+62 852-1400-0779</a></li>
+                <li>Online Operation</li>
+                <li>Available Worldwide</li>
               </ul>
             </div>
           </div>

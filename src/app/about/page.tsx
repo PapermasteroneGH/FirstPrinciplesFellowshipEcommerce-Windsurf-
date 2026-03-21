@@ -235,7 +235,7 @@ export default function AboutPage() {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 text-white border-white hover:bg-white hover:text-blue-600" asChild>
-              <Link href="/contact">Become a Mentor</Link>
+              <Link href="mailto:firstprincefelshipartners@gmail.com">Become a Mentor</Link>
             </Button>
           </div>
         </div>
