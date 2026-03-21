@@ -191,7 +191,7 @@ export default function AboutPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {team.map((member, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader className="text-center">
@@ -202,12 +202,14 @@ export default function AboutPage() {
                   <CardDescription className="text-blue-600 font-medium">
                     {member.role}
                   </CardDescription>
-                  <Badge variant="secondary" className="w-fit mx-auto">
+                </CardHeader>
+                <CardContent className="text-center">
+                  <Badge variant="secondary" className="mb-3">
                     {member.expertise}
                   </Badge>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 text-sm">{member.bio}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {member.bio}
+                  </p>
                 </CardContent>
               </Card>
             ))}
