@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Clock, Lightbulb } from "lucide-react";
 import Link from "next/link";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export default function ContactPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -43,30 +44,33 @@ export default function ContactPage() {
   }, [slides.length]);
 
   return (
-    <div className="min-h-screen" style={{background: slides[currentSlide].gradient}}>
-      {/* Background Image Layer */}
-      <div 
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `url(${slides[currentSlide].image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.3,
-          zIndex: 0
-        }}
-      />
+    <>
+      <ThemeSwitcher />
+      <div className="min-h-screen" style={{background: 'var(--background)'}}>
+        {/* Background Image Layer */}
+        <div 
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: `url(${slides[currentSlide].image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.3,
+            zIndex: 0
+          }}
+        />
 
-      {/* Navigation */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Link href="/" className="flex items-center space-x-2">
-              <Lightbulb className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">First Principles Fellowship</span>
+        {/* Navigation */}
+        <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+          <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="flex items-center space-x-2">
+              <Link href="/" className="flex items-center space-x-2">
+                <Lightbulb className="h-8 w-8 text-blue-600" />
+                <span className="text-xl font-bold text-gray-900">First Principles Fellowship</span>
+              </Link>
             </Link>
           </div>
           <nav className="hidden md:flex space-x-6">
