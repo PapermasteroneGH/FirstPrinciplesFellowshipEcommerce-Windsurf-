@@ -278,7 +278,7 @@ export default function AboutPage() {
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>info@firstprinciples.org</li>
+                <li><a href="mailto:firstprincefelshiinquiries@gmail.com" className="hover:text-white transition-colors">firstprincefelshiinquiries@gmail.com</a></li>
                 <li>+1 (555) 123-4567</li>
                 <li>123 Research Ave</li>
                 <li>Science City, SC 12345</li>

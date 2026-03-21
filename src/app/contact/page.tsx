@@ -263,7 +263,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-2">Can I join as a mentor?</h4>
                   <p className="text-gray-600 text-sm">
-                    We're always looking for experienced researchers to join our mentorship program. Please contact us at partners@firstprinciples.org.
+                    We're always looking for experienced researchers to join our mentorship program. Please contact us at <a href="mailto:firstprincefelshipartners@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors">firstprincefelshipartners@gmail.com</a>.
                   </p>
                 </div>
                 
