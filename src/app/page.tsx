@@ -13,27 +13,27 @@ export default function Home() {
   const slides = [
     { 
       gradient: 'linear-gradient(135deg, #6366F1, #3B82F6)', 
-      image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1920&h=1080&fit=crop',
+      image: '/images/carousel/homepage/slide1.jpg',
       title: 'Stanford INTERSECT Competition' 
     },
     { 
       gradient: 'linear-gradient(135deg, #8B5CF6, #6366F1)', 
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&h=1080&fit=crop',
+      image: '/images/carousel/homepage/slide2.jpg',
       title: 'MIT Research Symposium' 
     },
     { 
       gradient: 'linear-gradient(135deg, #EC4899, #8B5CF6)', 
-      image: 'https://images.unsplash.com/photo-1517245386807-bb0f887752e4?w=1920&h=1080&fit=crop',
+      image: '/images/carousel/homepage/slide3.jpg',
       title: 'Harvard Medical Conference' 
     },
     { 
       gradient: 'linear-gradient(135deg, #EF4444, #EC4899)', 
-      image: 'https://images.unsplash.com/photo-1554224154-260325db02d2?w=1920&h=1080&fit=crop',
+      image: '/images/carousel/homepage/slide4.jpg',
       title: 'Quantum Computing Summit' 
     },
     { 
       gradient: 'linear-gradient(135deg, #10B981, #14B8A6)', 
-      image: 'https://images.unsplash.com/photo-1551434679-e076c223a692?w=1920&h=1080&fit=crop',
+      image: '/images/carousel/homepage/slide5.jpg',
       title: 'International Research Forum' 
     }
   ];

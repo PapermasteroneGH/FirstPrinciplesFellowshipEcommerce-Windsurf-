@@ -10,27 +10,27 @@ export default function ContactPage() {
   const slides = [
     { 
       gradient: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', 
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e4041f?w=1920&h=1080&fit=crop',
+      image: '/images/carousel/contact/slide1.jpg',
       title: 'Research Collaboration' 
     },
     { 
       gradient: 'linear-gradient(135deg, #10B981, #3B82F6)', 
-      image: 'https://images.unsplash.com/photo-1521791136064-e73952e038b7?w=1920&h=1080&fit=crop',
+      image: '/images/carousel/contact/slide2.jpg',
       title: 'Innovation Hub' 
     },
     { 
       gradient: 'linear-gradient(135deg, #8B5CF6, #EC4899)', 
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop',
+      image: '/images/carousel/contact/slide3.jpg',
       title: 'Global Network' 
     },
     { 
       gradient: 'linear-gradient(135deg, #F97316, #EF4444)', 
-      image: 'https://images.unsplash.com/photo-1551434679-e076c223a692?w=1920&h=1080&fit=crop',
+      image: '/images/carousel/contact/slide4.jpg',
       title: 'Advanced Research' 
     },
     { 
       gradient: 'linear-gradient(135deg, #14B8A6, #10B981)', 
-      image: 'https://images.unsplash.com/photo-1517245386807-bb0f887752e4?w=1920&h=1080&fit=crop',
+      image: '/images/carousel/contact/slide5.jpg',
       title: 'Future Technologies' 
     }
   ];
