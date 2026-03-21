@@ -145,15 +145,15 @@ export default function ContactPage() {
                 Call Us
               </h3>
               <p className="text-gray-600">
-                <strong>Main Office:</strong><br />
-                +1 (555) 123-4567
+                <strong>Main Contact:</strong><br />
+                +62 852-1400-0779
               </p>
               <p className="text-gray-600 mt-2">
-                <strong>Support Hotline:</strong><br />
-                +1 (555) 987-6543
+                <strong>WhatsApp Support:</strong><br />
+                +62 852-1400-0779
               </p>
               <p className="text-sm text-gray-500 mt-3">
-                Available during business hours
+                Available Monday-Friday, 9:00 AM - 6:00 PM WIB (UTC+7)
               </p>
             </div>
 
@@ -232,11 +232,11 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold mb-3">For Technical Support</h3>
                   <p className="text-gray-600 mb-3">
-                    For any technical questions or support needs, call our hotline at 
-                    <strong> +1 (555) 987-6543</strong> during business hours.
+                    For any technical questions or support needs, call or message us at 
+                    <strong> +62 852-1400-0779</strong> during business hours.
                   </p>
                   <p className="text-sm text-gray-500">
-                    Mon-Fri: 9:00 AM - 6:00 PM EST
+                    Monday-Friday: 9:00 AM - 6:00 PM WIB (UTC+7)
                   </p>
                 </div>
               </div>
