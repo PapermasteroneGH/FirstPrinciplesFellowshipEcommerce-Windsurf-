@@ -164,15 +164,21 @@ export default function ContactPage() {
               </h3>
               <p className="text-gray-600">
                 <strong>General Inquiries:</strong><br />
-                info@firstprinciples.org
+                <a href="mailto:firstprincefelshiinquiries@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  firstprincefelshiinquiries@gmail.com
+                </a>
               </p>
               <p className="text-gray-600 mt-2">
                 <strong>Support:</strong><br />
-                support@firstprinciples.org
+                <a href="mailto:firstprincefelshisupport@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  firstprincefelshisupport@gmail.com
+                </a>
               </p>
               <p className="text-gray-600 mt-2">
                 <strong>Partnerships:</strong><br />
-                partners@firstprinciples.org
+                <a href="mailto:firstprincefelshipartners@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  firstprincefelshipartners@gmail.com
+                </a>
               </p>
             </div>
 
@@ -194,7 +200,7 @@ export default function ContactPage() {
                   <h3 className="font-semibold mb-3">For General Inquiries</h3>
                   <p className="text-gray-600 mb-3">
                     For general questions about our organization, services, or partnership opportunities, 
-                    please email us at <strong>info@firstprinciples.org</strong>.
+                    please email us at <strong><a href="mailto:firstprincefelshiinquiries@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors">firstprincefelshiinquiries@gmail.com</a></strong>.
                   </p>
                   <p className="text-sm text-gray-500">
                     We'll respond within 24 hours with the information you need.
@@ -205,7 +211,7 @@ export default function ContactPage() {
                   <h3 className="font-semibold mb-3">For Service Inquiries</h3>
                   <p className="text-gray-600 mb-3">
                     To learn more about our technical consulting, training programs, mentorship, 
-                    or sponsorship opportunities, contact us at <strong>support@firstprinciples.org</strong>.
+                    or sponsorship opportunities, contact us at <strong><a href="mailto:firstprincefelshisupport@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors">firstprincefelshisupport@gmail.com</a></strong>.
                   </p>
                   <p className="text-sm text-gray-500">
                     Include details about your research background and specific needs.
@@ -216,7 +222,7 @@ export default function ContactPage() {
                   <h3 className="font-semibold mb-3">For Partnership Opportunities</h3>
                   <p className="text-gray-600 mb-3">
                     If you're interested in partnering with us or becoming a mentor, 
-                    please reach out at <strong>partners@firstprinciples.org</strong>.
+                    please reach out at <strong><a href="mailto:firstprincefelshipartners@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors">firstprincefelshipartners@gmail.com</a></strong>.
                   </p>
                   <p className="text-sm text-gray-500">
                     We're always looking for experienced researchers to join our network.
